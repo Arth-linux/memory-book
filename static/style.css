@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+/* KEEP SAME ANIMATED BACKGROUND */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ffecd2, #fcb69f, #ffdde1, #c9ffbf);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientBG {
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
+}
+
+.container {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* FINAL BUTTONS */
+.btn-area {
+    margin-top: 30px;
+}
+
+.yes-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.no-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* 🌹 ROSE ANIMATION */
+.rose-wrapper {
+    margin-top: 50px;
+}
+
+.rose {
+    display: inline-block;
+    font-size: 45px;
+    margin: 5px;
+    transform: scale(0.2);
+    opacity: 0;
+    transition: 0.6s ease;
+}
+
+/* OPEN STATE */
+.rose.open {
+    opacity: 1;
+    transform: scale(1.8);
+    animation: bloom 1.6s ease-in-out infinite;
+}
+
+/* OPEN/CLOSE LOOP EFFECT */
+@keyframes bloom {
+    0%   { transform: scale(1.6) rotate(0deg); }
+    50%  { transform: scale(2.0) rotate(8deg); }
+    100% { transform: scale(1.6) rotate(0deg); }
+}
