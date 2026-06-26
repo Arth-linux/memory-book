@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    background: #111;
+    font-family: Arial;
+}
+
+/* START SCREEN */
+#startScreen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* BOOK */
+#book {
+    display: none;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SPREAD (2 PAGES SIDE BY SIDE) */
+#spread {
+    display: flex;
+    width: 90vw;
+    height: 80vh;
+}
+
+/* EACH PAGE */
+.page {
+    flex: 1;
+    background: #f6f0e6;
+    margin: 10px;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+/* IMAGE (FULL FIT) */
+.page img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* IMPORTANT: full image visible */
+    border-radius: 8px;
+    background: white;
+}
+
+/* CONTROLS */
+.controls {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 16px;
+    cursor: pointer;
+}

@@ -1,98 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Getting To Know You</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Memory Book</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
 
-<div class="bg"></div>
-
-<div class="container">
-    <h1>Let's Get To Know Each Other ✨</h1>
-
-    <div id="quiz">
-
-        <div class="question active">
-            <h2>Pick your ideal trip ✈️</h2>
-            <button onclick="nextQuestion()">🏖️ Beach</button>
-            <button onclick="nextQuestion()">🏔️ Mountains</button>
-            <button onclick="nextQuestion()">🌆 City</button>
-        </div>
-
-        <div class="question">
-            <h2>Perfect weekend 🌙</h2>
-            <button onclick="nextQuestion()">🍿 Movies</button>
-            <button onclick="nextQuestion()">🚗 Long drive</button>
-            <button onclick="nextQuestion()">☕ Cafe</button>
-        </div>
-
-        <div class="question">
-            <h2>Food mood 🍕</h2>
-            <button onclick="nextQuestion()">🍕 Pizza</button>
-            <button onclick="nextQuestion()">🍜 Noodles</button>
-            <button onclick="nextQuestion()">🍔 Burger</button>
-        </div>
-
-        <div class="question">
-            <h2>What matters most ❤️</h2>
-            <button onclick="nextQuestion()">Kindness</button>
-            <button onclick="nextQuestion()">Loyalty</button>
-            <button onclick="nextQuestion()">Humor</button>
-        </div>
-
-        <div class="question">
-            <h2>Morning or Night 🌅</h2>
-            <button onclick="nextQuestion()">Morning</button>
-            <button onclick="nextQuestion()">Night</button>
-        </div>
-
-        <div class="question">
-            <h2>Dream pet 🐶</h2>
-            <button onclick="nextQuestion()">Dog</button>
-            <button onclick="nextQuestion()">Cat</button>
-            <button onclick="nextQuestion()">Both</button>
-        </div>
-
-        <div class="question">
-            <h2>Music vibe 🎵</h2>
-            <button onclick="nextQuestion()">Romantic</button>
-            <button onclick="nextQuestion()">Lo-fi</button>
-            <button onclick="nextQuestion()">Bollywood</button>
-        </div>
-
-        <div class="question">
-            <h2>Free time 😌</h2>
-            <button onclick="nextQuestion()">Sleep</button>
-            <button onclick="nextQuestion()">Friends</button>
-            <button onclick="nextQuestion()">Reels</button>
-        </div>
-
-        <div class="question">
-            <h2>Travel style ✈️</h2>
-            <button onclick="nextQuestion()">Planner</button>
-            <button onclick="nextQuestion()">Spontaneous</button>
-            <button onclick="nextQuestion()">Both</button>
-        </div>
-
-        <div class="question">
-            <h2>Superpower 🦸</h2>
-            <button onclick="nextQuestion()">Mind read</button>
-            <button onclick="nextQuestion()">Time travel</button>
-            <button onclick="nextQuestion()">Teleport</button>
-        </div>
-
-        <div class="question">
-            <h2>What makes you smile 😊</h2>
-            <button onclick="nextQuestion()">Food</button>
-            <button onclick="nextQuestion()">Memes</button>
-            <button onclick="nextQuestion()">Compliments</button>
-        </div>
-
-    </div>
+<div id="startScreen">
+    <h1>📖 A Memory Book</h1>
+    <button onclick="startBook()">Begin</button>
 </div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- BOOK -->
+<div id="book">
+
+    <div id="spread">
+
+        <!-- LEFT PAGE -->
+        <div class="page" id="leftPage"></div>
+
+        <!-- RIGHT PAGE -->
+        <div class="page" id="rightPage"></div>
+
+    </div>
+
+    <div class="controls">
+        <button onclick="prev()">⬅ Prev</button>
+        <button onclick="next()">Next ➡</button>
+    </div>
+
+</div>
+
+<script>
+    let index = 0;
+    const spreads = {{ spreads | tojson }};
+</script>
+
+<script src="/static/js/script.js"></script>
+
 </body>
 </html>

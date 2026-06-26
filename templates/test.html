@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flip Test</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #book {
+      width: 600px;
+      height: 400px;
+    }
+
+    .page {
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="book">
+  <div class="page">Page 1</div>
+  <div class="page">Page 2</div>
+  <div class="page">Page 3</div>
+  <div class="page">Page 4</div>
+</div>
+
+<script>
+  const book = document.getElementById("book");
+
+  const pageFlip = new PageFlip(book, {
+    width: 600,
+    height: 400,
+    size: "fixed",
+    showCover: false
+  });
+
+  pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+</script>
+
+</body>
+</html>
